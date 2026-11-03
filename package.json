@@ -12,5 +12,14 @@
   "type": "commonjs",
   "dependencies": {
     "angular": "^1.8.3"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Manya-17/MITM-ANGULARJS-.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Manya-17/MITM-ANGULARJS-/issues"
+  },
+  "homepage": "https://github.com/Manya-17/MITM-ANGULARJS-#readme"
 }
