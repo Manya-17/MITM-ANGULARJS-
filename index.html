@@ -8,16 +8,18 @@
      <script src="app.js"></script>
 
 </head>
-<body ng-controller="MyController">
-    <h1>student details</h1>
+<body>
+    
+<div ng-controller="CollegeController">
+
+<h1>Welcome to {{collegeName}}</h1>
+<hr>
+<div ng-controller="StudentController">
     <h2>{{name}}</h2>
-    <h3>update the student name</h3>
-    <input type="text" ng-model="name">
-    <p>updated name:{{name}}</p>
-    <h4>update the student age</h4>
-    <input type="text" ng-model="age">
-    <p>updated age:{{age}}</p>
-    <h5>{{semester}}</h5>
-    <h6>{{department}}</h6>
+    <h3>{{department}}</h3>
+</div>
+<h3>{{department}}</h3>
+    </div>
+
 </body>
 </html>
