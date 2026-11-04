@@ -9,24 +9,29 @@ app.controller('CollegeController', function($scope) {
 //child controller
 
 app.controller(
-     "StudentController", function($scope) {
-        $scope.name = "john";
+    "StudentController", function($scope) {
+        $scope.name = "EVARA";
         $scope.department = "Computer Science";
         $scope.semester = 3;
 
         //aray
         $scope.students =[
-            "MANYA H A",
-            "BHOOMIKA K ",
+            "MANYA",
             "SADVI",
+            "BHOOMIKA KC",
             "THANMAYA",
         ];
-        $scope.USN =[
-            107,
-            108,
-            109, 
-            110,      
-        ];
+
+//function to add a student ussing ng click
+        $scope.addStudent = function() {
+            if ($scope.name.trim() !==""){
+                $scope.students.push($scope.name);
+                $scope.name = "";
+            }
+            else{
+                alert("Please enter a student name");
+            }
+        };
+        
     }
 );
-    

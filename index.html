@@ -10,7 +10,7 @@
 </head>
 <body>
     
-<div ng-controller="CollegeController">
+ <div ng-controller="CollegeController">
         <h2>welcome to {{collegeName}}</h2>
         <hr>
         <div ng-controller="StudentController">
@@ -25,19 +25,21 @@
             <label>semester:</label>
             <input type="text" ng-model="semester">
             <hr>
+            <button ng-click="addStudent()">
+                Register Student
+            </button>
 
-            <h3>student Details</h3>
-            <p>Name: {{name}}</p>
-            <p>Department: {{department}}</p>
-            <p>Semester: {{semester}}</p>
+            <hr>
 
-            <h2>Student List</h2>
+            <h2>Registered Students</h2>
+
             <ul>
-             <li ng-repeat="student in students">{{student}}</li>
+                <li ng-repeat="student in students">
+                    {{ student }}
+                </li>
             </ul>
-            <ul>
-                <li ng-repea="usn in usn">{{USN}}</li>
+
+
         </div>
     </div>
 </html>
-
