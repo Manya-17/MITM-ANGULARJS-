@@ -1,25 +1,58 @@
-<!DOCTYPE html>
-<html lang="en" ng-app="myApp">
-<head>
-    <meta charset="UTF-8">
-    <title>Student Management</title>
 
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>Student Registration</title>
     <script src="node_modules/angular/angular.js"></script>
     <script src="app.js"></script>
 </head>
 
-<body ng-controller ="myCtrl" >
+<body ng-controller="myCtrl">
 
-    <h2>product list</h2>
+    <h2>Student Registration</h2>
 
-    <input ng-model="searchText" placeholder="Search for products..">
-    <p>today's date is {{ today | date:'fullDate' }}</p>
+    <form name="studentForm" ng-submit="submit()" novalidate>
 
-    <div ng-repeat="p in products | filter:search">
-        {{ p.name }} - {{ p.price | currency:'₹' }}
-    </div>
+        <input type="text" ng-model="student.name"
+               name="name" placeholder="Student Name" required>
+        <br><br>
 
+        <input type="email" ng-model="student.email"
+               name="email" placeholder="Email" required>
+        <br><br>
 
+        <select ng-model="student.department" required>
+            <option value="">Select Department</option>
+            <option>CSE</option>
+            <option>ECE</option>
+            <option>EEE</option>
+        </select>
+        <br><br>
+
+        <input type="number" ng-model="student.age"
+               name="age" placeholder="Age" min="18" required>
+        <br><br>
+
+        <button type="submit" ng-disabled="studentForm.$invalid">
+            Register
+        </button>
+
+    </form>
+
+    <p ng-if="submitted">
+        Registration Successful!
+    </p>
+
+    <h3>Student Details</h3>
+
+    <p>Name: {{ student.name | uppercaseText }}</p>
+    <p>Email: {{ student.email }}</p>
+    <p>Department: {{ student.department }}</p>
+    <p>Age: {{ student.age }}</p>
+
+    <hr>
+
+    <p highlight>Custom Directive Example</p>
 
 </body>
 </html>
